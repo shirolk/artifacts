@@ -1,0 +1,9 @@
+{
+	"serviceName": "bpsserver",
+	"cartridgeType": "bpsserver",
+	"deploymentPolicyName": "D1",
+	"autoscalingPolicyName": "AS1",
+	"clusterDomain": "bpsserverdev.dev.domain",
+	"clusterSubDomain": "subdomain2",
+	"tenantRange": "*"
+}

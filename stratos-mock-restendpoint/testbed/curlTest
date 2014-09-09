@@ -1,0 +1,59 @@
+#create new tenants
+curl -X POST -H "Content-Type: application/json" -d @tenant.json -k -v -u admin:admin https://localhost:9443/stratos/admin/tenant
+curl -X POST -H "Content-Type: application/json" -d @tenant2.json -k -v -u admin:admin https://localhost:9443/stratos/admin/tenant
+
+#list all tenants
+curl -X GET -H “Content-Type: application/json” -k -v -u admin:admin https://localhost:9443/stratos/admin/tenant/list
+
+#create partition P1 as admin
+curl -X POST -H "Content-Type: application/json" -d @partition1.json -k -v -u admin:admin https://localhost:9443/stratos/admin/policy/deployment/partition
+curl -X GET -H “Content-Type: application/json” -k -v -u admin:admin https://localhost:9443/stratos/admin/partition
+
+curl -X POST -H "Content-Type: application/json" -d @partition2.json -k -v -u tscooby:123 https://localhost:9443/stratos/admin/policy/deployment/partition
+curl -X GET -H “Content-Type: application/json” -k -v -u tscooby:123 https://localhost:9443/stratos/admin/partition
+
+curl -X POST -H "Content-Type: application/json" -d @partition3.json -k -v -u tscooby:123 https://localhost:9443/stratos/admin/policy/deployment/partition
+curl -X GET -H “Content-Type: application/json” -k -v -u tnero:123 https://localhost:9443/stratos/admin/partition
+
+#create autoscale policy as admin
+curl -X POST -H "Content-Type: application/json" -d @as1.json -k -v -u admin:admin https://localhost:9443/stratos/admin/policy/autoscale
+curl -X GET -H "Content-Type: application/json" -k -v -u admin:admin https://localhost:9443/stratos/admin/policy/autoscale
+
+curl -X POST -H "Content-Type: application/json" -d @as2.json -k -v -u tscooby:123 https://localhost:9443/stratos/admin/policy/autoscale
+curl -X GET -H "Content-Type: application/json" -k -v -u tscooby:123 https://localhost:9443/stratos/admin/policy/autoscale
+
+curl -X POST -H "Content-Type: application/json" -d @as3.json -k -v -u tnero:123 https://localhost:9443/stratos/admin/policy/autoscale
+curl -X GET -H "Content-Type: application/json" -k -v -u tnero:123 https://localhost:9443/stratos/admin/policy/autoscale
+
+#create deployment policy 
+curl -X POST -H "Content-Type: application/json" -d @deployment1.json -k -v -u admin:admin https://localhost:9443/stratos/admin/policy/deployment
+curl -X GET -H "Content-Type: application/json" -k -v -u admin:admin https://localhost:9443/stratos/admin/policy/deployment
+
+curl -X POST -H "Content-Type: application/json" -d @deployment2.json -k -v -u tscooby:123 https://localhost:9443/stratos/admin/policy/deployment
+curl -X GET -H "Content-Type: application/json" -k -v -u tscooby:123 https://localhost:9443/stratos/admin/policy/deployment
+
+curl -X POST -H "Content-Type: application/json" -d @deployment3.json -k -v -u tnero:123 https://localhost:9443/stratos/admin/policy/deployment
+curl -X GET -H "Content-Type: application/json" -k -v -u tnero:123 https://localhost:9443/stratos/admin/policy/deployment
+
+#create multi-tenant services
+curl -X POST -H "Content-Type: application/json" -d @mtservice1.json -k -v -u admin:admin https://localhost:9443/stratos/admin/service/definition
+curl -X GET -H "Content-Type: application/json"  -k -v -u admin:admin https://localhost:9443/stratos/admin/service
+
+curl -X POST -H "Content-Type: application/json" -d @mtservice2.json -k -v -u tscooby:123 https://localhost:9443/stratos/admin/service/definition
+curl -X GET -H "Content-Type: application/json"  -k -v -u tscooby:123 https://localhost:9443/stratos/admin/service
+
+curl -X POST -H "Content-Type: application/json" -d @mtservice3.json -k -v -u tscooby:123 https://localhost:9443/stratos/admin/service/definition
+curl -X GET -H "Content-Type: application/json"  -k -v -u tnero:123 https://localhost:9443/stratos/admin/service
+
+#create cartridges
+curl -X POST -H "Content-Type: application/json" -d @cart1.json -k -v -u admin:admin https://localhost:9443/stratos/admin/cartridge/definition
+curl -X GET -H "Content-Type: application/json" -k -v -u admin:admin https://localhost:9443/stratos/admin/cartridge/list
+
+#subscribe
+curl -X POST -H "Content-Type: application/json" -d @subs1.json -k -v -u admin:admin https://localhost:9443/stratos/admin/cartridge/subscribe
+
+#list subscriptions
+curl -X GET -H "Content-Type: application/json" -k -v -u admin:admin https://localhost:9443/stratos/admin/cartridge/list/subscribed
+
+#unsubscribe
+curl -X POST -H "Content-Type: application/json" -d 'admin' -k -v -u admin:admin https://localhost:9443/stratos/admin/cartridge/unsubscribe

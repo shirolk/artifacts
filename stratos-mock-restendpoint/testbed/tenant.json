@@ -1,0 +1,9 @@
+{
+      "admin":"tscooby",
+      "firstname":"Scooby",
+      "lastname":"Doo",
+      "adminPassword":"123",
+      "tenantDomain":"scooby.com",
+      "email":"doo@scooby.com",
+      "active":"true"
+}
