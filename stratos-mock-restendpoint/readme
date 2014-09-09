@@ -1,0 +1,14 @@
+1. Go to <STRATOS_HOME>/repository/deployment/server/webapps of your stratos installation
+2. Backup stratos.war file
+3. Remove the stratos folder as well 
+4. Copy the stratos.war file to the above location
+5. Start stratos -this will redeploy the rest-api webapp
+
+
+version 1
+=========
+1. Includes all existing calls with a tenant seperation 
+
+TODO:
+2. Add the public specifier
+3. Add the user manangement calls 
