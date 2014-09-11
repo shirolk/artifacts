@@ -1,5 +1,6 @@
 {
     "type":"php1",
+    "isPublic":"true",
     "provider":"apache",
     "host":"stratos.org",
     "displayName":"PHP",

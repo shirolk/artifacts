@@ -1,5 +1,6 @@
 {
     "id":"D1",
+    "isPublic":"true",
     "partitionGroup":{
        "id":"ec2",
        "partitionAlgo":"one-after-another",

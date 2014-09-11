@@ -1,5 +1,6 @@
 {
 	"serviceName": "esbserver",
+        "isPublic":"false",
 	"cartridgeType": "esbserver",
 	"deploymentPolicyName": "D1",
 	"autoscalingPolicyName": "AS1",

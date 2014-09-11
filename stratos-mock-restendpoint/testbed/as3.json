@@ -1,5 +1,6 @@
 {
   "id": "economy3",
+  "isPublic":"false",
   "loadThresholds": {
     "requestsInFlight": {
       "upperLimit": 30,

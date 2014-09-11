@@ -1,5 +1,6 @@
 {
     "id": "P3",
+    "isPublic":"false",
     "provider": "ec2",
     "property": [
         {

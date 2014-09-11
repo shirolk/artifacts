@@ -1,5 +1,6 @@
 {
 	"serviceName": "bpsserver",
+        "isPublic":"false",
 	"cartridgeType": "bpsserver",
 	"deploymentPolicyName": "D1",
 	"autoscalingPolicyName": "AS1",

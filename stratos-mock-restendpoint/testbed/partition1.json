@@ -1,5 +1,7 @@
 {
     "id": "P1",
+    "description":"Test",
+    "isPublic":"true",
     "provider": "ec2",
     "property": [
         {
